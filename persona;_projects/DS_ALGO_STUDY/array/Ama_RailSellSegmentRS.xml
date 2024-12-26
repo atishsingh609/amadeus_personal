@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gcnet/Intranet/cgi-bin/1AXML.xsd">
+	<soap:Header xmlns="http://www.amadeus.net/1axml-msg/schema/msg-header-1_0.xsd">
+		<MessageHeader ResponseRequested="false" Terminate="false" Reverse="true" id="000100H6ZNJUBB" version="1.0" soap:mustUnderstand="1">
+			<From>1ASIXRAIL</From>
+			<To>FROM</To>
+			<TimeStamp>
+				<GenerationTime>2018-10-09T12:46:46Z</GenerationTime>
+			</TimeStamp>
+			<FromRef>
+				<ID>003PHW6C4O</ID>
+				<SequenceNb>1</SequenceNb>
+			</FromRef>
+			<ToRef>
+				<ID>00H6ZNJUBB</ID>
+				<SequenceNb>1</SequenceNb>
+			</ToRef>
+			<Service version="" id="ROB_1">
+				<name>AMA_RailSellSegmentRS</name>
+			</Service>
+		</MessageHeader>
+	</soap:Header>
+	<soap:Body>
+		<AMA_RailSellSegmentRS xmlns="http://xml.amadeus.com/2010/06/RailBooking_v1" xmlns:ota="http://www.opentravel.org/OTA/2003/05/OTA2011A" xmlns:rail="http://xml.amadeus.com/2010/06/RailCommonTypes_v2" xmlns:mop="http://xml.amadeus.com/2010/06/PayIssueTypes_v1" Version="1.0" AltLangID="EN" CorrelationID="E1G#5F280YUT15O$XGX#40ZT91">
+			<Success>
+				<Booking>
+					<rail:AssociatedRecords ID="RCD_1" RefIDs="RES_1 PAX_1" ExternalID="QZDNKC" Identifier="FRR/QZDNKC" Inventory="FRR"/>
+					<rail:AssociatedRecords ID="RCD_2" RefIDs="RES_1 PAX_2" ExternalID="QZDNML" Identifier="FRR/QZDNML" Inventory="FRR"/>
+					<rail:Passenger>
+						<rail:Actor DateOfBirth="1945-05-12" ID="PAX_1" LegacyID="EXT_PAX_1" ExternalID="EXT_PAX_1">
+							<rail:Name FirstName="Anonymous" LastName="YZoLgToFtY"/>
+						</rail:Actor>
+						<rail:Actor DateOfBirth="2017-03-12" ID="PAX_2" LegacyID="EXT_PAX_1" ExternalID="EXT_PAX_1">
+							<rail:Name FirstName="Anonymous" LastName="anFjminaBs"/>
+						</rail:Actor>
+					</rail:Passenger>
+					<rail:Reservation ID="RES_1">
+						<rail:Warning Code="34313">MISMATCH IN BOOKING CLASS</rail:Warning>
+						<rail:Warning Code="34314">MISMATCH IN QUOTING RULE</rail:Warning>
+						<rail:Segment Type="002" Duration="PT2H3M" ID="SEG_1" LegacyID="EXT_SEG_7" ExternalID="EXT_SEG_7" Status="HK">
+							<rail:start dateTime="2018-09-23T18:04:00" locationName="LYON PART DIEU">
+								<rail:locationCode type="NLS">FRLPD</rail:locationCode>
+							</rail:start>
+							<rail:end dateTime="2018-09-23T20:07:00" locationName="PARIS GARE DE LYON">
+								<rail:locationCode type="NLS">FRPLY</rail:locationCode>
+							</rail:end>
+							<rail:serviceProvider Code="SNF" Context="1A" Description="SNCF"/>
+							<rail:identifier>6628</rail:identifier>
+							<rail:vehicle Code="TGD"/>
+							<rail:CO2Emissions>1.7</rail:CO2Emissions>
+							<rail:ServiceOnBoard Code="011"/>
+							<rail:ServiceOnBoard Code="017"/>
+						</rail:Segment>
+						<rail:Accommodation Type="002" CoachNumber="006" PlaceNumber="021" DeckLevel="002" Smoking="0" Environment="006" ID="ACC_1" RefIDs="SEG_1 PAX_2" LegacyID="34">
+							<rail:SeatPreference Direction="006" Position="003" Configuration="008"/>
+						</rail:Accommodation>
+						<rail:Accommodation Type="002" CoachNumber="006" PlaceNumber="022" DeckLevel="002" Smoking="0" Environment="006" ID="ACC_2" RefIDs="SEG_1 PAX_1" LegacyID="35">
+							<rail:SeatPreference Direction="006" Position="002" Configuration="008"/>
+						</rail:Accommodation>
+						<rail:Pricing>
+							<rail:Reduction Description="PT0012" ID="RED_1" RefIDs="SEG_1 PAX_2">
+								<rail:PassengerCategory Code="001" Context="1A"/>
+							</rail:Reduction>
+							<rail:Reduction Description="PT0012" ID="RED_2" RefIDs="SEG_1 PAX_2">
+								<rail:PassengerCategory Code="002" Context="1A"/>
+							</rail:Reduction>
+							<rail:Reduction Description="PT00AD" ID="RED_3" RefIDs="SEG_1 PAX_1">
+								<rail:PassengerCategory Code="006" Context="1A"/>
+							</rail:Reduction>
+							<rail:BookingClass Code="BE" Class="002" AccomType="002" ID="BC_1"/>
+							<rail:BookingClass Code="BZ" Class="002" AccomType="002" ID="BC_2"/>
+							<rail:QuotingRule Code="MBVPRM15" Family="006" Type="001" Flexibility="004" Description="TGV Prem's" ID="QR_1">
+								<rail:PassengerLimits MinPassengers="1" MaxPassengers="9"/>
+								<rail:Condition Code="NO_ECH_NO_REMB">Ticket may not be changed nor refunded.</rail:Condition>
+							</rail:QuotingRule>
+							<rail:QuotingRule Code="NB90" Family="007" Type="001" Flexibility="002" Description="Billet Bambin" ID="QR_2">
+								<rail:PassengerLimits MinPassengers="1"/>
+								<rail:Condition Code="ENTRE_0_3">0 to less than 4 years of age on the day of departure.</rail:Condition>
+								<rail:Condition Code="ECH_REM_AV_DEP">Ticket can be exchanged or fully refunded without charge prior to departure.</rail:Condition>
+								<rail:Condition Code="NO_ECH_NO_REMB_DEP">Ticket cannot be exchanged and is non-refundable after departure.</rail:Condition>
+							</rail:QuotingRule>
+							<rail:TicketingOption Type="001" DistributionType="012" ID="TKO_1"/>
+							<rail:TicketingOption Type="006" DistributionType="002" ID="TKO_2"/>
+							<rail:TicketingOption Type="006" DistributionType="004" ID="TKO_3"/>
+							<rail:Quote TicketingExpirationTime="2018-08-15T18:04:00" Type="Total" pricedPer="All" ID="QUO_1" RefIDs="PAX_1 PAX_2">
+								<rail:Price CurrencyCode="EUR" DecimalPlaces="2" Amount="3400"/>
+								<rail:Product Type="Cart" ID="PRD_1" RefIDs="PRD_2 PRD_3 PRD_4 PRD_5"/>
+							</rail:Quote>
+							<rail:Quote Type="Fare" pricedPer="Passenger" ID="QUO_2" RefIDs="PAX_2">
+								<rail:Price CurrencyCode="EUR" DecimalPlaces="2" Amount="900"/>
+								<rail:Product Type="Segment" ID="PRD_2" RefIDs="SEG_1 RED_1 RED_2 BC_1 QR_2"/>
+								<rail:Product Type="Accom" ID="PRD_3" RefIDs="SEG_1 ACC_1"/>
+							</rail:Quote>
+							<rail:Quote Type="Fare" pricedPer="Passenger" ID="QUO_3" RefIDs="PAX_1">
+								<rail:Price CurrencyCode="EUR" DecimalPlaces="2" Amount="2500"/>
+								<rail:Product Type="Segment" ID="PRD_4" RefIDs="SEG_1 RED_3 BC_2 QR_1"/>
+								<rail:Product Type="Accom" ID="PRD_5" RefIDs="SEG_1 ACC_2"/>
+							</rail:Quote>
+						</rail:Pricing>
+					</rail:Reservation>
+					<rail:AdditionalData>
+						<rail:Data ID="AD_1" RefIDs="RES_1 SEG_1" Name="BookedSegmentsActive">1</rail:Data>
+						<rail:Data ID="AD_2" RefIDs="RES_1 SEG_1" Name="CO2">1.7</rail:Data>
+						<rail:Data ID="AD_3" RefIDs="RES_1" Name="Histories"/>
+						<rail:Data ID="AD_4" RefIDs="RES_1 AD_3" Name="HistoriesBookingSource">TE</rail:Data>
+						<rail:Data ID="AD_5" RefIDs="RES_1 AD_3" Name="HistoriesCityCode">BEHDQ</rail:Data>
+						<rail:Data ID="AD_6" RefIDs="RES_1 AD_3" Name="HistoriesActionCodeValue">XS SN 6628BZ23SEP FRLPD FRPLY SS/HK1  1804  2007</rail:Data>
+						<rail:Data ID="AD_7" RefIDs="RES_1 AD_3" Name="HistoriesActionCodeValue">AS SN 6628BE23SEP FRLPD FRPLY HK/SS1  1804  2007</rail:Data>
+						<rail:Data ID="AD_8" RefIDs="RES_1 AD_3" Name="HistoriesLastModifiedDateTime">2018-08-08T11:30:00</rail:Data>
+						<rail:Data ID="AD_9" RefIDs="SEG_1" Name="WEBSVCAPI">FRR</rail:Data>
+						<rail:Data ID="AD_10" RefIDs="RES_1 SEG_1" Name="OPC_CREATION">TRUE</rail:Data>
+						<rail:Data ID="AD_11" Name="AllowNHT">True</rail:Data>
+						<rail:Data ID="AD_12" Name="DISTRIBUTOR_CODE">SNB</rail:Data>
+					</rail:AdditionalData>
+				</Booking>
+			</Success>
+		</AMA_RailSellSegmentRS>
+	</soap:Body>
+</soap:Envelope>

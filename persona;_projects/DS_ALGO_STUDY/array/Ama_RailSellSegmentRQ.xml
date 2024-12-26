@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gcnet/Intranet/cgi-bin/1AXML.xsd 1AXML.xsd">
+    <soap:Header xmlns="http://www.amadeus.net/1axml-msg/schema/msg-header-1_0.xsd">
+        <MessageHeader>
+            <Service version="" id="ROB_1">
+                <name>AMA_RailSellSegmentRQ
+</name>
+            </Service>
+        </MessageHeader>
+    </soap:Header>
+    <soap:Body>
+<AMA_RailSellSegmentRQ Version="1.002" CorrelationID="ReqVwJEKC3ATjpxlJmDUHD8EnkaBPeCgQDVA8-1bQPY6j0cHPj9U" xmlns:ns2="http://xml.amadeus.com/2010/06/RailCommonTypes_v2" xmlns="http://xml.amadeus.com/2010/06/RailBooking_v1" xmlns:ns4="http://xml.amadeus.com/2010/06/PayIssueTypes_v1" xmlns:ns3="http://www.opentravel.org/OTA/2003/05/OTA2011A">
+		<Passenger>
+		<Actor DateOfBirth="1945-05-12" TID="PAX_1">
+			<ns2:Name FirstName="Anonymous" LastName="YZoLgToFtY"/>
+		</Actor>
+		<Actor DateOfBirth="2017-03-12" TID="PAX_2">
+			<ns2:Name FirstName="Anonymous" LastName="anFjminaBs"/>
+		</Actor>
+	</Passenger>
+	<Reservation>
+		<Schedule TID="SCH_1">
+			<ns2:start dateTime="2018-09-23T18:04:00">
+				<ns2:locationCode type="NLS">FRLPD</ns2:locationCode>
+			</ns2:start>
+			<ns2:end dateTime="2018-09-23T20:07:00">
+				<ns2:locationCode type="NLS">FRPLY</ns2:locationCode>
+			</ns2:end>
+			<Segment Inventory="FRR" Type="002" Duration="PT2H3M" TID="SEG_1">
+				<ns2:start dateTime="2018-09-23T18:04:00">
+					<ns2:locationCode type="NLS">FRLPD</ns2:locationCode>
+				</ns2:start>
+				<ns2:end dateTime="2018-09-23T20:07:00">
+					<ns2:locationCode type="NLS">FRPLY</ns2:locationCode>
+				</ns2:end>
+				<ns2:serviceProvider Code="SNF"/>
+				<ns2:identifier>6628</ns2:identifier>
+				<ns2:vehicle Code="TGD" Description="TGV Duplex"/>
+			</Segment>
+		</Schedule>
+		<Accommodation Type="002" TID="ACC_1" RefTIDs="SEG_1 PAX_1"/>
+		<Accommodation Type="002" TID="ACC_2" RefTIDs="SEG_1 PAX_2"/>
+		<Pricing>
+			<ns2:Reduction TID="RED_1">
+				<ns2:PassengerCategory Code="006"/>
+			</ns2:Reduction>
+			<ns2:Reduction TID="RED_2">
+				<ns2:PassengerCategory Code="001"/>
+			</ns2:Reduction>
+			<ns2:BookingClass Code="BZ" TID="BC_1"/>
+			<ns2:BookingClass Code="BE" TID="BC_2"/>
+			<ns2:QuotingRule Family="007" Type="001" TID="QR_1"/>
+			<ns2:QuotingRule Family="007" Type="001" TID="QR_2"/>
+			<ns2:Quote Type="Fare" TID="QUO_1" RefTIDs="PAX_1">
+				<ns2:Product Type="Segment" TID="PRD_1" RefTIDs="SEG_1 RED_1 BC_1 QR_1"/>
+				<ns2:Product Type="Accom" TID="PRD_2" RefTIDs="SEG_1 ACC_1"/>
+			</ns2:Quote>
+			<ns2:Quote Type="Fare" TID="QUO_2" RefTIDs="PAX_2">
+				<ns2:Product Type="Segment" TID="PRD_3" RefTIDs="SEG_1 RED_2 BC_2 QR_2"/>
+				<ns2:Product Type="Accom" TID="PRD_4" RefTIDs="SEG_1 ACC_2"/>
+			</ns2:Quote>
+		</Pricing>
+	</Reservation>
+	<AdditionalData>
+		<ns2:Data TID="AD_1" RefTIDs="PAX_1 SEG_1 ACC_1 RED_1 BC_1 QR_1" Name="BOOKING_TOKEN">MBVPRM15|PT00AD|BZ</ns2:Data>
+		<ns2:Data TID="AD_2" RefTIDs="PAX_2 SEG_1 ACC_2 RED_2 BC_2 QR_2" Name="BOOKING_TOKEN">NB90|PT0012|BE</ns2:Data>
+		<ns2:Data TID="AD_3" Name="DISTRIBUTOR_CODE">SNB</ns2:Data>
+		<ns2:Data TID="AD_4" Name="AllowNHT">True</ns2:Data>
+	</AdditionalData>
+</AMA_RailSellSegmentRQ>
+    </soap:Body>
+</soap:Envelope>
